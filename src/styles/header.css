@@ -1,0 +1,17 @@
+.headerContainer {
+  background-image: linear-gradient(var(--pale-yellow) 65%, White 35%);
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.claim {
+  border: 1px solid red;
+
+  padding: 0;
+  margin: 0;
+  font-size: 8rem;
+  color: var(--deep-purple);
+  font-family: "Monoton", cursive;
+}
