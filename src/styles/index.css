@@ -3,10 +3,30 @@
 @import "footer.css";
 @import "App.css";
 
+/* font-family: 'Bungee Hairline', cursive;
+font-family: 'Codystar', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: "Monoton", cursive; */
+
 :root {
   --deep-purple: #2e095c;
   --spring-green: #a8eb12;
   --pale-yellow: #f8e883;
+  --pale-blue: #e6f4f1;
+  --fresh-yellow: #f9f871;
+  --aqua-blue: #8ce7e8;
+  --pool-blue: #86f2d7;
+  --aqua-green: #9bf9b8;
+  --pale-green: #c5fc93;
+  --dove-blue: #90c0df;
+  --horizon-blue: #8ba3ce;
+  --lavender: #8f84b4;
+  --light-mauve: #936490;
+  --dark-mauve: #8f4764;
+  --pale-mandarin: #ffca80;
+  --pale-magenta: #d8529f;
+  --juicy-mango: #fdba03;
 }
 
 * {

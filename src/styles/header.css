@@ -1,5 +1,7 @@
 .headerContainer {
-  background-image: linear-gradient(var(--pale-yellow) 65%, White 35%);
+  /*this is my reminder for a horizontally divided div
+  background-image: linear-gradient(var(--pale-blue) 65%, White 35%);*/
+  background-color: var(--pale-blue);
   height: 20vh;
   display: flex;
   flex-direction: column;
@@ -7,11 +9,16 @@
 }
 
 .claim {
-  border: 1px solid red;
-
+  /*border: 1px solid red;*/
   padding: 0;
   margin: 0;
-  font-size: 8rem;
+  font-size: 5em;
   color: var(--deep-purple);
-  font-family: "Monoton", cursive;
+  font-family: "Codystar", cursive;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--deep-purple);
+  padding-bottom: 1rem;
 }

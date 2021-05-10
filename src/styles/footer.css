@@ -1,0 +1,5 @@
+.footerContainer {
+  margin: 0;
+  background-color: var(--pale-blue);
+  height: 5vh;
+}
