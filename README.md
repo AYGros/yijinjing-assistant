@@ -23,7 +23,7 @@ The screen changes color 12 times with a starting sound for each change and stay
 
 ### Wireframe:
 
-![wireframe](public\images\yijinjing-assistant-wireframe.png)
+![wireframe](public/images/yijinjing-assistant-wireframe.png)
 
 ### Sound effects are taken from ZapSplat
 
