@@ -1,7 +1,8 @@
 import React from 'react'
 import {Button} from "react-bootstrap"
 import {useState, useEffect} from "react";
-//import '../styles/main.css';
+import {Howl, Howler} from "howler";
+
 
 const backgrounds=[
     "linear-gradient(358deg,var(--spring-green),var(--juicy-mango)",
@@ -24,10 +25,16 @@ const [section, setSection]=useState(0);
 const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
 
+const sectionStartSound = new Howl({
+    src: ['/sounds/softBell.mp3'],
+    volume: 0.4
+})
+
 useEffect(()=>{
     if(isRunning && section <= backgrounds.length) {
         setColor(backgrounds[section-1])
         console.log(backgrounds.length)
+        sectionStartSound.play();
         document.getElementById("main").style.background = color;
         document.getElementById("main").style.backgroundSize = '400% 400%';
         document.getElementById("main").style.WebKitAnimation = 'AnimationName 17s ease infinite';
@@ -37,7 +44,7 @@ useEffect(()=>{
             setSection(section=>section+1);
             setColor(backgrounds[section]);
             
-        }, 5000);
+        }, 20000);
         return ()=>clearInterval(interval);
     }
 }, [isRunning, section, color])
