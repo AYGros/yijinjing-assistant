@@ -10,7 +10,7 @@ The screen changes color 12 times with a starting sound for each change and stay
 
 ### Planned features:
 
--   enter different interval lengths throug user interface
+-   enter different interval lengths through user interface
 -   option to select different sounds for section start
 -   option to select different background sounds/music
 -   display number of active section on screen

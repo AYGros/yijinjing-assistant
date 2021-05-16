@@ -6,16 +6,16 @@ import {Howl} from "howler";
 
 const backgrounds=[
     "linear-gradient(358deg,var(--spring-green),var(--juicy-mango)",
-    "linear-gradient(358deg,var(--pool-blue),var(--aqua-green)" ,
-    "linear-gradient(358deg,var(--pale-magenta),var(--pale-mandarin)",
+    "linear-gradient(358deg,var(--aqua-green),var(--pool-blue)" ,
     "linear-gradient(358deg,var(--pale-green),var(--pale-yellow)" ,
-    "linear-gradient(358deg,var(--lavender),var(--pale-blue)" ,
+    "linear-gradient(358deg,var(--pale-magenta),var(--pale-mandarin)",
     "linear-gradient(358deg,var(--deep-purple),var(--dark-mauve)" ,
+    "linear-gradient(358deg,var(--lavender),var(--pale-blue)" ,
     "linear-gradient(358deg,var(--deep-red),var(--soft-pink)" ,
     "linear-gradient(358deg,var(--light-mud),var(--lady-grey)" ,
     "linear-gradient(358deg,var(--light-mauve),var(--horizon-blue)" ,
-    "linear-gradient(358deg,var(--night-blue),var(--dawn-orange)" ,
     "linear-gradient(358deg,var(--deep-teal),var(--lime-green)" ,
+    "linear-gradient(358deg,var(--night-blue),var(--dawn-orange)" ,
     "linear-gradient(358deg,var(--fresh-yellow),var(--aqua-blue)" 
 ]
    
@@ -44,7 +44,7 @@ useEffect(()=>{
             setSection(section=>section+1);
             setColor(backgrounds[section]);
             
-        }, 120000);
+        }, 20000);
         return ()=>clearInterval(interval);
     }
 }, [isRunning, section, color])
@@ -64,7 +64,7 @@ const handleRunSet = () => {
     return (
         <div className="mainContainer" id="main">
          <h1>Main</h1> 
-         <p>this page changes background color scheme after 30 seconds</p>
+         <p>this page changes background color scheme after 20 seconds</p>
          <Button onClick={handleRunSet}>Start</Button>  
         </div>
     )
