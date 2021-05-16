@@ -44,7 +44,7 @@ useEffect(()=>{
             setSection(section=>section+1);
             setColor(backgrounds[section]);
             
-        }, 20000);
+        }, 120000);
         return ()=>clearInterval(interval);
     }
 }, [isRunning, section, color])
