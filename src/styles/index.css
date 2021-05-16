@@ -10,41 +10,49 @@ font-family: 'Open Sans', sans-serif;
 font-family: "Monoton", cursive; */
 
 :root {
-  --deep-purple: #2e095c;
-  --spring-green: #a8eb12;
-  --pale-yellow: #f8e883;
-  --pale-blue: #e6f4f1;
-  --fresh-yellow: #f9f871;
-  --aqua-blue: #8ce7e8;
-  --pool-blue: #86f2d7;
-  --aqua-green: #9bf9b8;
-  --pale-green: #c5fc93;
-  --dove-blue: #90c0df;
-  --horizon-blue: #8ba3ce;
-  --lavender: #8f84b4;
-  --light-mauve: #936490;
-  --dark-mauve: #8f4764;
-  --pale-mandarin: #ffca80;
-  --pale-magenta: #d8529f;
-  --juicy-mango: #fdba03;
+    --light-mud: #f3eed9;
+    --lady-grey: #bfa5a4;
+    --deep-teal: #246655;
+    --lime-green: #c0d329;
+    --deep-purple: #2e095c;
+    --night-blue: #240579;
+    --dawn-orange: #ff9d4d;
+    --deep-red: #88001f;
+    --soft-pink: #ffe4e1;
+    --spring-green: #a8eb12;
+    --pale-yellow: #f8e883;
+    --pale-blue: #e6f4f1;
+    --fresh-yellow: #f9f871;
+    --aqua-blue: #8ce7e8;
+    --pool-blue: #86f2d7;
+    --aqua-green: #81e2a0;
+    --pale-green: #c5fc93;
+    --dove-blue: #90c0df;
+    --horizon-blue: #8ba3ce;
+    --lavender: #8f84b4;
+    --light-mauve: #936490;
+    --dark-mauve: #8f4764;
+    --pale-mandarin: #ffca80;
+    --pale-magenta: #d8529f;
+    --juicy-mango: #fdba03;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }

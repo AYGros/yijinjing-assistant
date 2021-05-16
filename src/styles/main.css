@@ -1,43 +1,48 @@
 .mainContainer {
-  background: linear-gradient(358deg, #246655, #c0d329);
-  background-size: 400% 400%;
+    /* background: linear-gradient(358deg, #246655, #c0d329);*/
+    background: linear-gradient(
+        358deg,
+        var(--pale-magenta),
+        var(--pale-mandarin)
+    );
+    background-size: 400% 400%;
 
-  -webkit-animation: AnimationName 17s ease infinite;
-  -moz-animation: AnimationName 17s ease infinite;
-  animation: AnimationName 17s ease infinite;
-  height: 75vh;
+    -webkit-animation: AnimationName 17s ease infinite;
+    -moz-animation: AnimationName 17s ease infinite;
+    animation: AnimationName 17s ease infinite;
+    height: 75vh;
 }
 
 @-webkit-keyframes AnimationName {
-  0% {
-    background-position: 28% 0%;
-  }
-  50% {
-    background-position: 73% 100%;
-  }
-  100% {
-    background-position: 28% 0%;
-  }
+    0% {
+        background-position: 28% 0%;
+    }
+    50% {
+        background-position: 73% 100%;
+    }
+    100% {
+        background-position: 28% 0%;
+    }
 }
 @-moz-keyframes AnimationName {
-  0% {
-    background-position: 28% 0%;
-  }
-  50% {
-    background-position: 73% 100%;
-  }
-  100% {
-    background-position: 28% 0%;
-  }
+    0% {
+        background-position: 28% 0%;
+    }
+    50% {
+        background-position: 73% 100%;
+    }
+    100% {
+        background-position: 28% 0%;
+    }
 }
 @keyframes AnimationName {
-  0% {
-    background-position: 28% 0%;
-  }
-  50% {
-    background-position: 73% 100%;
-  }
-  100% {
-    background-position: 28% 0%;
-  }
+    0% {
+        background-position: 28% 0%;
+    }
+    50% {
+        background-position: 73% 100%;
+    }
+    100% {
+        background-position: 28% 0%;
+    }
 }
