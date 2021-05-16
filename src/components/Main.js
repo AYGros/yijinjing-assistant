@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from "react-bootstrap"
 import {useState, useEffect} from "react";
-import {Howl, Howler} from "howler";
+import {Howl} from "howler";
 
 
 const backgrounds=[
