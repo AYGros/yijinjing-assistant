@@ -27,7 +27,7 @@ function App() {
     "linear-gradient(358deg,var(--fresh-yellow),var(--aqua-blue)" 
   ]
 
-const [section, setSection]=useState(0);
+const [section, setSection]=useState(1);
 const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
 
@@ -52,7 +52,8 @@ const [isRunning, setIsRunning]=useState(false);
               setColor={setColor}
               section={section}
               setSection={setSection}
-              isRunning={isRunning}/>
+              isRunning={isRunning}
+              setIsRunning={setIsRunning}/>
           </Route>
           <Route exact path="/guide">
             <Guide />

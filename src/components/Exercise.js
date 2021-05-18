@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect} from "react";
 import {Howl} from "howler";
 
-const Exercise = ({backgrounds, section, setSection, isRunning, color, setColor}) => {
+const Exercise = ({backgrounds, section, setSection, isRunning, setIsRunning, color, setColor}) => {
 
     const sectionStartSound = new Howl({
         src: ['/sounds/softBell.mp3'],
@@ -12,7 +12,6 @@ const Exercise = ({backgrounds, section, setSection, isRunning, color, setColor}
     useEffect(()=>{
         if(isRunning && section <= backgrounds.length) {
             setColor(backgrounds[section-1])
-            console.log(backgrounds.length)
             sectionStartSound.play();
             document.getElementById("main").style.background = color;
             document.getElementById("main").style.backgroundSize = '400% 400%';
@@ -22,8 +21,7 @@ const Exercise = ({backgrounds, section, setSection, isRunning, color, setColor}
             let interval = setInterval(()=>{
                 setSection(section=>section+1);
                 setColor(backgrounds[section]);
-                
-            }, 20000);
+            }, 10000);
             return ()=>clearInterval(interval);
         }
     }, [isRunning, section, color])
