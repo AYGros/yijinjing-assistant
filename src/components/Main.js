@@ -1,9 +1,4 @@
 import React from 'react'
-import {Button} from "react-bootstrap"
-import {useState, useEffect} from "react";
-import {Howl} from "howler";
-
-
 
 const Main = ({children}) => {
 

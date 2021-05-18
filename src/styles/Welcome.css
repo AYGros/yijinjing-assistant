@@ -1,0 +1,18 @@
+.welcomeContainer {
+    min-height: 75vh;
+    border: 1px solid red;
+    color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.runButton {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold !important;
+    color: var(--deep-purple) !important;
+    background-color: var(--pale-blue) !important;
+    border-color: var(--deep-red) !important;
+    border-width: 2px !important;
+    border-radius: 2rem !important;
+}

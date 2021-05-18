@@ -7,7 +7,6 @@ const Header = () => {
             </h1>
             <h1 className="claim">Yi Jin Jing</h1>
             <h3>your friendly training assistant</h3>
-            
         </div>
     )
 }
