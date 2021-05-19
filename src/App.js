@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import {useState, useEffect} from "react";
-import {Route, Switch } from "react-router-dom";
+import {Route, Switch, useHistory } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Exercise from "./components/Exercise";
 import Guide from "./components/Guide";
@@ -11,7 +11,8 @@ import AboutMe from "./components/AboutMe";
 
 
 function App() {
-  
+
+  const history = useHistory();
   const backgrounds=[
     "linear-gradient(358deg,var(--spring-green),var(--juicy-mango)",
     "linear-gradient(358deg,var(--aqua-green),var(--pool-blue)" ,
@@ -35,6 +36,7 @@ const [isRunning, setIsRunning]=useState(false);
     setSection(1);
     setColor(backgrounds[section-1])
     setIsRunning(true);
+    history.push("/exercise");
 }
 
   return (
