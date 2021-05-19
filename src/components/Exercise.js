@@ -1,8 +1,16 @@
 import React from 'react'
 import { useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import {Howl} from "howler";
 
 const Exercise = ({backgrounds, section, setSection, isRunning, setIsRunning, color, setColor}) => {
+
+    const history=useHistory();
+
+    const endSound = new Howl({
+        src: ['/sounds/endGong.mp3'],
+        volume: 0.4
+    })
 
     const sectionStartSound = new Howl({
         src: ['/sounds/softBell.mp3'],
@@ -25,6 +33,14 @@ const Exercise = ({backgrounds, section, setSection, isRunning, setIsRunning, co
             return ()=>clearInterval(interval);
         }
     }, [isRunning, section, color])
+
+    useEffect(()=>{
+       if (section > 12) {
+           setIsRunning(false);
+           endSound.play();
+           history.push("/");
+       }
+    }, [section])
 
     return (
         <div>
