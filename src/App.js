@@ -32,11 +32,28 @@ const [section, setSection]=useState(1);
 const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
 
-  const handleRunSet = () => {
+const sectionStartAudio = new Audio('/sounds/softBell.mp3');
+sectionStartAudio.volume = 0.4;
+
+const backgroundAudio = new Audio('/sounds/forestAlmost6Minutes.mp3');
+backgroundAudio.volume = 0.6;
+backgroundAudio.loop = true;
+
+
+const handleRunSet = () => {
     setSection(1);
+    backgroundAudio.play();
     setColor(backgrounds[section-1])
     setIsRunning(true);
     history.push("/exercise");
+}
+
+const handleFinishSet = (e) => {
+  e.preventDefault();
+  backgroundAudio.pause();
+  backgroundAudio.currentTime=0.0;
+  history.push('/');
+  window.location.reload();
 }
 
   return (
@@ -45,7 +62,9 @@ const [isRunning, setIsRunning]=useState(false);
       <Main>
         <Switch>
           <Route exact path="/">
-            <Welcome handleRunSet={handleRunSet} />
+            <Welcome 
+            backgroundAudio={backgroundAudio}
+            handleRunSet={handleRunSet} />
           </Route>
           <Route exact path="/exercise">
             <Exercise 
@@ -53,6 +72,8 @@ const [isRunning, setIsRunning]=useState(false);
               color={color}
               setColor={setColor}
               section={section}
+              sectionStartAudio={sectionStartAudio}
+              backgroundAudio={backgroundAudio}
               setSection={setSection}
               isRunning={isRunning}
               setIsRunning={setIsRunning}/>
@@ -61,7 +82,11 @@ const [isRunning, setIsRunning]=useState(false);
             <Guide />
           </Route>
           <Route exact path="/cooldown">
-            <Cooldown />
+            <Cooldown 
+             backgroundAudio={backgroundAudio}
+              section={section}
+              handleFinishSet={handleFinishSet}
+            />
           </Route>
           <Route exact path="/about">
             <AboutMe />

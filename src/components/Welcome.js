@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import {Button, Row, Col, Container, Form} from "react-bootstrap";
 
-const Welcome = ({handleRunSet}) => {
+const Welcome = ({handleRunSet, backgroundAudio}) => {
+    
     return (
         <Container fluid className="welcomeContainer">
             <Row className="justify-content-center" >
