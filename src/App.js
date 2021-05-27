@@ -31,6 +31,7 @@ function App() {
 const [section, setSection]=useState(1);
 const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
+const [mySetting, setMySetting]=useState({time: "1"});
 
 const sectionStartAudio = new Audio('/sounds/notifications/zapsplatHarpAndMallet.mp3');
 sectionStartAudio.volume = 0.4;
@@ -39,6 +40,11 @@ const backgroundAudio = new Audio('/sounds/background/zapsplatNightCrickets.mp3'
 backgroundAudio.volume = 0.6;
 backgroundAudio.loop = true;
 
+const handleChangeForm = (e)=>{
+  setMySetting((prevState)=>{
+    return {...prevState, [e.target.name]: e.target.value}
+  })
+} 
 
 const handleRunSet = () => {
     setSection(1);
@@ -63,11 +69,14 @@ const handleFinishSet = (e) => {
         <Switch>
           <Route exact path="/">
             <Welcome 
+            mySetting={mySetting}
+            onChangeForm={handleChangeForm}
             backgroundAudio={backgroundAudio}
             handleRunSet={handleRunSet} />
           </Route>
           <Route exact path="/exercise">
             <Exercise 
+              mySetting={mySetting}
               backgrounds={backgrounds}
               color={color}
               setColor={setColor}

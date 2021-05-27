@@ -3,12 +3,15 @@ import { useEffect} from "react";
 import { useHistory } from "react-router-dom";
 
 
-const Exercise = ({backgrounds, section, sectionStartAudio, backgroundAudio, setSection, isRunning, setIsRunning, color, setColor}) => {
+const Exercise = ({backgrounds, mySetting, section, sectionStartAudio, backgroundAudio, setSection, isRunning, setIsRunning, color, setColor}) => {
 
     const history=useHistory();
 
     const endAudio = new Audio('/sounds/notifications/endGong.mp3');
     endAudio.volume = 0.4;
+
+    let myTime=parseInt(mySetting.time)*60000;
+    console.log(myTime);
 
     useEffect(()=>{
         if(section <= backgrounds.length) {
@@ -23,7 +26,7 @@ const Exercise = ({backgrounds, section, sectionStartAudio, backgroundAudio, set
                 setSection(section=>section+1);
                 setColor(backgrounds[section]);
                 
-            }, 10000);
+            }, myTime);
             return ()=>clearInterval(interval);
         }
     }, [isRunning, section, color])
@@ -39,7 +42,7 @@ const Exercise = ({backgrounds, section, sectionStartAudio, backgroundAudio, set
 
     return (
         <div>
-            <p>this page changes background color scheme every 20 seconds</p>
+            <p>this page changes background color scheme every {myTime/1000} seconds</p>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import {Button, Row, Col, Container, Form} from "react-bootstrap";
 
-const Welcome = ({handleRunSet, backgroundAudio}) => {
+const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
     
     return (
         <Container fluid className="welcomeContainer">
@@ -12,24 +12,34 @@ const Welcome = ({handleRunSet, backgroundAudio}) => {
                     <Col >
                     <Form.Group controlId="sectionTime">
                         <Form.Label>Your section time</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
-                            <option>Choose...</option>
-                            <option>1 minute</option>
-                            <option>2 minutes</option>
-                            <option>3 minutes</option>
-                            <option>4 minutes</option>
-                            <option>5 minutes</option>
+                        <Form.Control 
+                        name="time" 
+                        as="select" 
+                        onChange={onChangeForm} 
+                        value={mySetting.time} 
+                        >
+                            {/*<option>Choose...</option>*/}
+                            <option value="1">1 minute</option>
+                            <option value="2">2 minutes</option>
+                            <option value="3">3 minutes</option>
+                            <option value="4">4 minutes</option>
+                            <option value="5">5 minutes</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
                     <Col >
                     <Form.Group controlId="sectionNotification">
                         <Form.Label>Your section notification</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control 
+                        name="notification" 
+                        as="select" 
+                        onChange={onChangeForm} 
+                        value={mySetting.notification}
+                        >
                             <option>Choose...</option>
-                            <option>Gong</option>
-                            <option>Harp Glissando</option>
-                            <option>Numbers</option>
+                            <option value="Gong">Gong</option>
+                            <option value="Harp">Harp Glissando</option>
+                            <option value="Numbers">Numbers</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
@@ -39,20 +49,41 @@ const Welcome = ({handleRunSet, backgroundAudio}) => {
                     <Form.Group controlId="instructions">
                         <Form.Label>Show instructions?</Form.Label>
                         <div key="inline-radio">
-                        <Form.Check inline label="Yes" name="instructionsGroup" type="radio" id="radio-yes"/>
-                        <Form.Check inline label="No" name="instructionsGroup" type="radio" id="radio-no"/>
+                        <Form.Check 
+                        inline label="Yes" 
+                        name="instructions" 
+                        type="radio" 
+                        id="radio-yes" 
+                        value="yes"
+                        checked={mySetting.instructions === "yes"}
+                        onChange={onChangeForm}
+                        />
+                        <Form.Check 
+                        inline label="No" 
+                        name="instructions" 
+                        type="radio" 
+                        id="radio-no" 
+                        value="no"
+                        checked={ mySetting.instructions === "no"}
+                        onChange={onChangeForm}
+                        />
                         </div>
                     </Form.Group>
                     </Col>
                     <Col >
                     <Form.Group controlId="backgroundSound">
                         <Form.Label>Your background sound</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control 
+                        name="background" 
+                        as="select" 
+                        onChange={onChangeForm} 
+                        value={mySetting.background} 
+                        >
                             <option>Choose...</option>
-                            <option>Night Crickets</option>
-                            <option>Waves</option>
-                            <option>Summer Forest</option>
-                            <option>Rain And Thunder</option>
+                            <option value="Crickets">Night Crickets</option>
+                            <option value="Waves">Waves</option>
+                            <option value="Forest">Summer Forest</option>
+                            <option value="Rain">Rain And Thunder</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
