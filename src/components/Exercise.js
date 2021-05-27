@@ -7,7 +7,7 @@ const Exercise = ({backgrounds, section, sectionStartAudio, backgroundAudio, set
 
     const history=useHistory();
 
-    const endAudio = new Audio('/sounds/endGong.mp3');
+    const endAudio = new Audio('/sounds/notifications/endGong.mp3');
     endAudio.volume = 0.4;
 
     useEffect(()=>{

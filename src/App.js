@@ -32,10 +32,10 @@ const [section, setSection]=useState(1);
 const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
 
-const sectionStartAudio = new Audio('/sounds/softBell.mp3');
+const sectionStartAudio = new Audio('/sounds/notifications/softBell.mp3');
 sectionStartAudio.volume = 0.4;
 
-const backgroundAudio = new Audio('/sounds/forestAlmost6Minutes.mp3');
+const backgroundAudio = new Audio('/sounds/background/forestAlmost6Minutes.mp3');
 backgroundAudio.volume = 0.6;
 backgroundAudio.loop = true;
 

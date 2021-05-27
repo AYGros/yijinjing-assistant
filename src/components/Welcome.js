@@ -28,7 +28,7 @@ const Welcome = ({handleRunSet, backgroundAudio}) => {
                         <Form.Control as="select" defaultValue="Choose...">
                             <option>Choose...</option>
                             <option>Gong</option>
-                            <option>Chimes</option>
+                            <option>Harp Glissando</option>
                             <option>Numbers</option>
                         </Form.Control>
                     </Form.Group>
@@ -52,7 +52,7 @@ const Welcome = ({handleRunSet, backgroundAudio}) => {
                             <option>Night Crickets</option>
                             <option>Waves</option>
                             <option>Summer Forest</option>
-                            <option>Playground</option>
+                            <option>Rain And Thunder</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
