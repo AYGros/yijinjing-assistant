@@ -1,9 +1,10 @@
 import React from 'react'
 import { useEffect} from "react";
+import { Row, Col, Button } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 
 
-const Exercise = ({backgrounds, mySetting, section, sectionStartAudio, backgroundAudio, setSection, isRunning, setIsRunning, color, setColor}) => {
+const Exercise = ({backgrounds, mySetting, section, sectionStartAudio, backgroundAudio, setSection, isRunning, setIsRunning, color, setColor, handleRestart}) => {
 
     const history=useHistory();
 
@@ -36,6 +37,7 @@ const Exercise = ({backgrounds, mySetting, section, sectionStartAudio, backgroun
            setIsRunning(false);
            endAudio.play();
            history.push("/cooldown");
+           backgroundAudio.current.pause();
            document.getElementById("main").style=null;
        }
     }, [section])
@@ -43,6 +45,16 @@ const Exercise = ({backgrounds, mySetting, section, sectionStartAudio, backgroun
     return (
         <div>
             <p>this page changes background color scheme every {myTime/1000} seconds</p>
+            <Row className="justify-content-md-center">
+                <Col md="auto">
+                    <h3 className="sectionNumber">Section {section}</h3>
+                </Col>
+            </Row>
+            <Row className="justify-content-md-center">
+                <Col>
+                <Button onClick={handleRestart}>restart</Button>
+                </Col>
+            </Row>
         </div>
     )
 }

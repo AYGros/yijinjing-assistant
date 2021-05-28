@@ -13,6 +13,7 @@
     padding: 0;
     margin: 0;*/
     font-size: 5em;
+    font-weight: 600;
     color: var(--deep-purple);
     font-family: "Codystar", cursive;
 }

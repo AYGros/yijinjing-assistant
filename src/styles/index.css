@@ -3,6 +3,7 @@
 @import "footer.css";
 @import "App.css";
 @import "Welcome.css";
+@import "Exercise.css";
 
 /* font-family: 'Bungee Hairline', cursive;
 font-family: 'Codystar', cursive;
@@ -36,6 +37,7 @@ font-family: "Monoton", cursive; */
     --pale-mandarin: #ffca80;
     --pale-magenta: #d8529f;
     --juicy-mango: #fdba03;
+    --brick-red: rgb(206, 53, 74);
 }
 
 * {

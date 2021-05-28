@@ -64,7 +64,7 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         type="radio" 
                         id="radio-no" 
                         value="no"
-                        checked={ mySetting.instructions === "no"}
+                        checked={mySetting.instructions === "no"}
                         onChange={onChangeForm}
                         />
                         </div>

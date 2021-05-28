@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import {useState, useEffect} from "react";
+import {useState, useRef,  useEffect} from "react";
 import {Route, Switch, useHistory } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Exercise from "./components/Exercise";
@@ -36,9 +36,10 @@ const [mySetting, setMySetting]=useState({time: "1"});
 const sectionStartAudio = new Audio('/sounds/notifications/zapsplatHarpAndMallet.mp3');
 sectionStartAudio.volume = 0.4;
 
-const backgroundAudio = new Audio('/sounds/background/zapsplatNightCrickets.mp3');
-backgroundAudio.volume = 0.6;
-backgroundAudio.loop = true;
+const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatNightCrickets.mp3'));
+
+backgroundAudio.current.volume = 0.6;
+backgroundAudio.current.loop = true;
 
 const handleChangeForm = (e)=>{
   setMySetting((prevState)=>{
@@ -48,16 +49,22 @@ const handleChangeForm = (e)=>{
 
 const handleRunSet = () => {
     setSection(1);
-    backgroundAudio.play();
+    backgroundAudio.current.play();
     setColor(backgrounds[section-1])
     setIsRunning(true);
     history.push("/exercise");
 }
 
+const handleRestart = () =>{
+  history.push('/');
+  backgroundAudio.current.pause();
+  backgroundAudio.current.currentTime=0.0;
+}
+
 const handleFinishSet = (e) => {
   e.preventDefault();
-  backgroundAudio.pause();
-  backgroundAudio.currentTime=0.0;
+  backgroundAudio.current.pause();
+  backgroundAudio.current.currentTime=0.0;
   history.push('/');
   window.location.reload();
 }
@@ -85,7 +92,9 @@ const handleFinishSet = (e) => {
               backgroundAudio={backgroundAudio}
               setSection={setSection}
               isRunning={isRunning}
-              setIsRunning={setIsRunning}/>
+              setIsRunning={setIsRunning}
+              handleRestart={handleRestart}
+              />
           </Route>
           <Route exact path="/guide">
             <Guide />
