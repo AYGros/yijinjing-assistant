@@ -1,0 +1,9 @@
+.sectionNumber {
+    font-family: "Montserrat", sans-serif;
+    color: var(--brick-red);
+    padding-bottom: 1rem;
+}
+
+p {
+    color: var(--brick-red);
+}
