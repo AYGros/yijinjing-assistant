@@ -79,7 +79,7 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         onChange={onChangeForm} 
                         value={mySetting.background} 
                         >
-                            <option>Choose...</option>
+                            <option value="">Choose...</option>
                             <option value="Crickets">Night Crickets</option>
                             <option value="Waves">Waves</option>
                             <option value="Forest">Summer Forest</option>
