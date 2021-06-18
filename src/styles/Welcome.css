@@ -4,8 +4,9 @@
     color: chartreuse;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
     justify-content: center;
-    align-items: center;
 }
 
 .runButton {
@@ -16,4 +17,9 @@
     border-color: var(--deep-red) !important;
     border-width: 2px !important;
     border-radius: 2rem !important;
+}
+
+.form-control {
+    width: 50% !important;
+    align-self: center;
 }

@@ -33,10 +33,14 @@ const [color, setColor]= useState();
 const [isRunning, setIsRunning]=useState(false);
 const [mySetting, setMySetting]=useState({time: "1"});
 
-const sectionStartAudio = new Audio('/sounds/notifications/zapsplatHarpAndMallet.mp3');
+const sectionStartAudio = new Audio(`/sounds/notifications/${mySetting.notification}`);
 sectionStartAudio.volume = 0.4;
 
-const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatNightCrickets.mp3'));
+//const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatNightCrickets.mp3'));
+const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatRainAndThunder.mp3'));
+//const backgroundAudio = useRef(new Audio(`/sounds/background/${mySetting.background}`))
+
+
 
 backgroundAudio.current.volume = 0.6;
 backgroundAudio.current.loop = true;
@@ -53,12 +57,14 @@ const handleRunSet = () => {
     setColor(backgrounds[section-1])
     setIsRunning(true);
     history.push("/exercise");
+    console.log(`this is ${mySetting.background}`)
 }
 
 const handleRestart = () =>{
   history.push('/');
   backgroundAudio.current.pause();
   backgroundAudio.current.currentTime=0.0;
+  window.location.reload();
 }
 
 const handleFinishSet = (e) => {

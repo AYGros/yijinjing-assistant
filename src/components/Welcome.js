@@ -5,11 +5,11 @@ import {Button, Row, Col, Container, Form} from "react-bootstrap";
 const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
     
     return (
-        <Container fluid className="welcomeContainer">
-            <Row className="justify-content-center" >
+        <Container className="welcomeContainer">
+            <Row className="justify-content-around" >
             <Form>
-                <Form.Row className="align-items-baseline" > 
-                    <Col >
+                <Form.Row className="align-items-baseline justify-content-around" > 
+                    <Col md={4} className="justify-content-center">
                     <Form.Group controlId="sectionTime">
                         <Form.Label>Your section time</Form.Label>
                         <Form.Control 
@@ -27,25 +27,25 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         </Form.Control>
                     </Form.Group>
                     </Col>
-                    <Col >
+                    <Col md={4} >
                     <Form.Group controlId="sectionNotification">
                         <Form.Label>Your section notification</Form.Label>
                         <Form.Control 
                         name="notification" 
                         as="select" 
                         onChange={onChangeForm} 
-                        value={mySetting.notification}
+                        selected={mySetting.notification}
                         >
                             <option>Choose...</option>
-                            <option value="Gong">Gong</option>
-                            <option value="Harp">Harp Glissando</option>
+                            <option value="softBell.mp3">Gong</option>
+                            <option value="zapsplatHarpAndMallet.mp3">Harp Glissando</option>
                             <option value="Numbers">Numbers</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
                 </Form.Row>
-                <Form.Row className="align-items-baseline"> 
-                    <Col>
+                <Form.Row className="align-items-baseline justify-content-around"> 
+                    <Col md={4}>
                     <Form.Group controlId="instructions">
                         <Form.Label>Show instructions?</Form.Label>
                         <div key="inline-radio">
@@ -70,7 +70,7 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         </div>
                     </Form.Group>
                     </Col>
-                    <Col >
+                    <Col md={4} >
                     <Form.Group controlId="backgroundSound">
                         <Form.Label>Your background sound</Form.Label>
                         <Form.Control 
@@ -80,10 +80,10 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         value={mySetting.background} 
                         >
                             <option value="">Choose...</option>
-                            <option value="Crickets">Night Crickets</option>
-                            <option value="Waves">Waves</option>
-                            <option value="Forest">Summer Forest</option>
-                            <option value="Rain">Rain And Thunder</option>
+                            <option value="zapsplatNightCrickets.mp3">Night Crickets</option>
+                            <option value="zapsplatBeachAndSeagullsTrimmed.mp3">Waves</option>
+                            <option value="forestAlmost6Minutes.mp3">Summer Forest</option>
+                            <option value="zapsplatRainAndThunder.mp3">Rain And Thunder</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
