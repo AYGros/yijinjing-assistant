@@ -77,13 +77,13 @@ const Welcome = ({handleRunSet, onChangeForm, mySetting, backgroundAudio}) => {
                         name="background" 
                         as="select" 
                         onChange={onChangeForm} 
-                        value={mySetting.background} 
+                        selected={mySetting.background} 
                         >
                             <option value="">Choose...</option>
-                            <option value="zapsplatNightCrickets.mp3">Night Crickets</option>
-                            <option value="zapsplatBeachAndSeagullsTrimmed.mp3">Waves</option>
-                            <option value="forestAlmost6Minutes.mp3">Summer Forest</option>
-                            <option value="zapsplatRainAndThunder.mp3">Rain And Thunder</option>
+                            <option value="Crickets">Night Crickets</option>
+                            <option value="Waves">Waves</option>
+                            <option value="Forest">Summer Forest</option>
+                            <option value="Rain">Rain And Thunder</option>
                         </Form.Control>
                     </Form.Group>
                     </Col>
