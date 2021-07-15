@@ -38,25 +38,14 @@ const [mySetting, setMySetting]=useState({time: "1"});
 let sectionStartAudio = new Audio(`/sounds/notifications/${mySetting.notification}`);
 sectionStartAudio.volume = 0.4;
 
-//const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatNightCrickets.mp3'));
-//const backgroundAudio = useRef(new Audio('/sounds/background/zapsplatRainAndThunder.mp3'));
-
-
 const backgroundAudio1 = useRef(new Audio('/sounds/background/zapsplatNightCrickets.mp3'));
-backgroundAudio1.current.volume = 0.6;
-backgroundAudio1.current.loop = true;
 
 const backgroundAudio2 = useRef(new Audio('sounds/background/zapsplatBeachAndSeagullsTrimmed.mp3'));
-backgroundAudio2.current.volume = 0.6;
-backgroundAudio2.current.loop = true;
 
 const backgroundAudio3 = useRef(new Audio('sounds/background/forestAlmost6Minutes.mp3'));
-backgroundAudio3.current.volume = 0.6;
-backgroundAudio3.current.loop = true;
 
 const backgroundAudio4 = useRef(new Audio('/sounds/background/zapsplatRainAndThunder.mp3'));
-backgroundAudio4.current.volume = 0.6;
-backgroundAudio4.current.loop = true;
+
 
 let backgroundAudio;
 switch (mySetting.background) {
@@ -78,8 +67,8 @@ default:
   break;
   
 }
-
-//const backgroundAudio= backgroundAudio2;
+backgroundAudio.current.volume = 0.6;
+backgroundAudio.current.loop = true;
 
 const handleChangeForm = (e)=>{
   setMySetting((prevState)=>{
